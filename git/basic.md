@@ -94,10 +94,27 @@ git branch [브랜치명2] ->  .git/refs/heads/[브랜치명2]
 
 # git 커밋 태그
 
-feat - 새 기능 추가
-fix - 버그 수정
-docs - 문서 수정
-stlye - 코드 자체 로직 변경 없음
-refactor - 코드 구조 개선
-test - 테스트 코드
-chore - 인프라 환경 설정 수정, 빌드, 패키지 매니저 설정
+## feat - 새 기능 추가
+## fix - 버그 수정
+## docs - 문서 수정
+## stlye - 코드 자체 로직 변경 없음
+## refactor - 코드 구조 개선
+## test - 테스트 코드
+## chore - 인프라 환경 설정 수정, 빌드, 패키지 매니저 설정
+
+
+# 인증방법1 : git PAT(Personal Access Token)
+
+## git config --global credential.helper store
+
+git config  git 설정변경
+--global 해당 서버 전체 적용
+credential.helper 인증 정보 어떻게 처리
+store 저장
+
+=> "~/.git-credentials" 에 토큰 저장됨
+
+
+
+# 인증방법2 : git ssh 연결
+서버 ssh pubkey 계정에 등록하기
