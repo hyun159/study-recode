@@ -10,10 +10,11 @@
 ```diff
 - # git 기본 흐름
 ```
-github에서 가져오기 or 로컬에서 git 입히기 -> "/opt/app" 작업완료! -> 담기(임시저장) -> 확정(고유ID생성) -> github 전송
+github에서 가져오기 or 로컬에서 git 입히기, git pull -> "/opt/app" 작업완료! -> 담기(임시저장) -> 확정(고유ID생성) -> github 전송
 
 1. github에서 가져오기 = git clone [리포지토리 주소]
    로컬에서 git 입히기 = git init
+   리포지토리 동기화 = git pull
 
    디렉토리에서 git으로 관리하기 위해서 .git 숨김파일이 존재해야한다.
    .git에 파일의 히스토리 기록됨
