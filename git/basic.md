@@ -89,3 +89,15 @@ git clone -> git branch [브랜치명] -> git checkout [브랜치명] -> 작업 
 git/refs/heads/main -> 기본 브랜치 파일
 git branch [브랜치명1] ->  .git/refs/heads/[브랜치명1]
 git branch [브랜치명2] ->  .git/refs/heads/[브랜치명2]
+
+
+
+# git 커밋 태그
+
+feat - 새 기능 추가
+fix - 버그 수정
+docs - 문서 수정
+stlye - 코드 자체 로직 변경 없음
+refactor - 코드 구조 개선
+test - 테스트 코드
+chore - 인프라 환경 설정 수정, 빌드, 패키지 매니저 설정
