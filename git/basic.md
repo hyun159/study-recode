@@ -1,6 +1,6 @@
+```diff
 
-
-# Git의 목적
+- # Git의 목적
 
 개발을 하거나 운영할 때 이전 버전이 필요하거나 언제든지 특정 시점으로 되돌릴 수 있어야한다.
 누가, 언제, 어떤 내용을 변경했는지 추적되어야한다.
@@ -9,7 +9,7 @@
 
 
 
-# git 기본 흐름
+- # git 기본 흐름
 
 github에서 가져오기 or 로컬에서 git 입히기 -> "/opt/app" 작업완료! -> 담기(임시저장) -> 확정(고유ID생성) -> github 전송
 
@@ -38,7 +38,7 @@ github에서 가져오기 or 로컬에서 git 입히기 -> "/opt/app" 작업완�
 
 
 
-# Git 명령어
+- # Git 명령어
 
 기본
 ## git clone 최초 복사
@@ -65,7 +65,7 @@ github에서 가져오기 or 로컬에서 git 입히기 -> "/opt/app" 작업완�
 
 
 
-# git checkout
+- # git checkout
 
 git은 .git/refs/heads/[브랜치명] 을 포인터로 지정하고 작업한다.
 브랜치에 따라 objects에 파일을 꺼낸다.  
@@ -77,7 +77,7 @@ checkout [고유ID] 헤더를 바꾸지않고 메인헤더의 과거를 보는�
 
 
 
-# git 브랜치
+- # git 브랜치
 
 branch 나뭇가지
 main의 해시값을 그대로 가져가면서 포인터를 붙여 구분하는것
@@ -91,8 +91,8 @@ git branch [브랜치명1] ->  .git/refs/heads/[브랜치명1]
 git branch [브랜치명2] ->  .git/refs/heads/[브랜치명2]
 
 
-
-# git 커밋 태그
+```diff
+- # git 커밋 태그
 
 ## feat - 새 기능 추가
 ## fix - 버그 수정
@@ -107,14 +107,15 @@ git branch [브랜치명2] ->  .git/refs/heads/[브랜치명2]
 
 ## git config --global credential.helper store
 
-git config  git 설정변경
---global 해당 서버 전체 적용
-credential.helper 인증 정보 어떻게 처리
-store 저장
+-git config  git 설정변경
+ --global 해당 서버 전체 적용
+ credential.helper 인증 정보 어떻게 처리
+ store 저장
 
 => "~/.git-credentials" 에 토큰 저장됨
 
 
 
-# 인증방법2 : git ssh 연결
+-# 인증방법2 : git ssh 연결
 서버 ssh pubkey 계정에 등록하기
+```
