@@ -93,7 +93,7 @@ git branch [브랜치명2] ->  .git/refs/heads/[브랜치명2]
 
 
 ```diff
-- # git 커밋 태
+- # git 커밋 태그
 ```
 ## feat - 새 기능 추가
 ## fix - 버그 수정
