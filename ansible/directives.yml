@@ -1,0 +1,12 @@
+# 디렉티브 메모장
+
+# ignore_errors: 실패해도 다음 작업 진행
+- name: ignore_errors
+  command: /bin/false
+  ignore_errors: true
+
+# failed_when: 조건을 직접 정의한다.
+- name: failed_when
+  command: df -h /
+  register: disk
+  failed_when: "'80%' in disk.stdout"

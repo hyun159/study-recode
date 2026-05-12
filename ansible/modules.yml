@@ -1,0 +1,29 @@
+# 모듈 메모장
+# 써다보면 손이 기억함
+# 외우려고 안해도됨
+
+# debug: 화면에 메시지 출력 또는 디버깅용
+
+# msg: 화면 출력
+- debug:
+    msg: "현재 OS는 {{ ansible_os_family }}"
+
+
+# var: 변수 내용 그대로 출력
+- debug:
+    var: disk_result.stdout
+
+
+# 단순 명령어 실행
+# # command: cat /etc/passwd | grep root, &> /dev/null ← 이거 안 됨
+# shell 사용 시 shell 모듈 써야함
+- command: df -h /
+  register: disk_result
+
+
+# http 프로토콜 메서드 사용 모듈
+- uri:
+    url: http://10.0.2.12:5000/health
+    method: GET
+    status_code: 200
+  register: health
