@@ -1,0 +1,22 @@
+
+ansible.cfg 메모장
+
+
+# gathering facts
+setup은 ansible을 동작하면 자동실행되는 모듈이다.
+gathering facts는 setup 모듈의 이름
+타겟 노드의 OS 정보를 수집한다.
+
+(TASK [Gathering Facts] ************************************)
+
+파싱하는 파일들
+/proc/meminfo
+/proc/cpuinfo
+/proc/os-relesae
+
+
+gathering = smart(캐시 수집과 실행) / implicit(실행) / explicit(자동 수집 안함)
+fact_caching = jsonfile # 데이터 형식
+fact_caching_connection = /경로
+fact_caching_timeout = 86400 # 24시간
+

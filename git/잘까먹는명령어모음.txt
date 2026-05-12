@@ -1,0 +1,6 @@
+
+# git ssh 연결 명령어
+git remote set-url origin git@github.com:[유저명]/[리포지토리 경로].git
+
+# ssh 테스트 명령어
+ssh -T git@github.com
