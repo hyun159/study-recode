@@ -1,0 +1,34 @@
+ansible-vault?
+
+ansible 자체에 내장된 암호화 유틸리티
+그냥 암호화 CLI 도구임
+컨트롤 노드 로컬에서 파일을 암호화/복호화
+
+사용하는 이유
+github등 외부 비밀번호 유출 방지
+
+# secrets.yml
+db_root_password: "MySecret123!"
+
+# playbook.yml 
+- mysql_user:
+    name: root
+    password: "{{ db_root_password }}"
+
+
+해당 모듈의 값을 암호화
+ansible-vault encrypt secrets.yml
+
+cat secrets.yml
+$ANSIBLE_VAULT;1.1;AES256
+62313365396662343061393464336163383764316539
+65633435363861613961386231383061366435353135
+...
+
+
+# 다시 복호화
+ansible-vault decrypt secrets.yml
+# 내용 확인
+ansible-vault view secrets.yml
+# 수정
+ansible-vault edit secrets.yml

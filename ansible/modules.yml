@@ -27,3 +27,43 @@
     method: GET
     status_code: 200
   register: health
+
+#-------------------------------------------------------------------------------------------
+# 파티션/LVM 생성 -> 마운트 -> 파일시스템
+
+# 파티션 생성 모듈
+- parted:
+    device: /dev/sdb
+    number: 1
+    state: present
+    part_start: 0%
+    part_end: 100%
+    label: gpt
+
+
+# VG 모듈, PV는 자동생성
+- lvg:
+    vg: my_vg
+    pvs: /dev/sdb1
+
+# LV 모듈
+- lvol:
+    vg: my_vg
+    lv: my_lv
+    size: 5G
+
+#  파일시스템 모듈
+- filesystem:
+    fstype: xfs
+    dev: /dev/my_vg/my_lv
+
+
+# 마운트 모듈
+- mount:
+    path: /mnt/data
+    src: /dev/my_vg/my_lv
+    fstype: xfs
+    state: mounted
+
+
+#-------------------------------------------------------------------------------------------
